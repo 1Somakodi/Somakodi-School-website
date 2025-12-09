@@ -77,8 +77,7 @@ export function Footer() {
                     <Link href={href}>
                       <Typography
                         as="span"
-                        className="py-1 flex items-center font-normal !text-gray-700 transition-colors hover:!text-gray-900 cursor-pointer"
-                      >
+                        className="py-1 flex items-center font-normal !text-gray-700 transition-colors hover:!text-gray-900 cursor-pointer">
                         {icon && <span>{icon}</span>}
                         {label}
                       </Typography>
