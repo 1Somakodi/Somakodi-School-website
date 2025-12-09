@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Somakodi School",
   description:
     "At Somakodi, we believe that education should evolve with the world. That’s why we offer an innovative way to learn, blending practical, project-based training with expert mentorship to prepare learners for real-world careers in tech..",
+  icons: {
+    icon: "/logos/logo.png",  // path from public folder
+  },
 };
 
 export default function RootLayout({
