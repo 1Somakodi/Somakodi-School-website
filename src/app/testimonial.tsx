@@ -55,13 +55,13 @@ function TESTIMONIAL() {
               <div className="flex items-center mt-8 gap-4">
                 <Avatar
                   variant="circular"
-                  src="/image/avatar4.jpg"
+                  src="/image/aln.jpg"
                   alt="spotify"
                   size="md"
                 />
                 <div>
                   <Typography variant="h6" color="blue-gray" className="mb-0.5">
-                    Naomi Okindo
+                    Allan Ochieng
                   </Typography>
                   <Typography
                     variant="small"

@@ -29,7 +29,7 @@ const COURSES = [
     brochure: "/brochures/React.pdf",
   },
   {
-    img: "/image/blogs/blog5.svg",
+    img: "/image/blogs/fende.jpg",
     tag: "Beginner • 12 Weeks • 1 Class • Intake:JAN26",
     title: "Frontend Essentials Course",
     label: "Kes. 45,000",
@@ -69,7 +69,7 @@ const COURSES = [
     brochure: "/brochures/Mobile-app.pdf",
   },
   {
-    img: "/image/blogs/blog4.svg",
+    img: "/image/blogs/dsc.jpg",
     tag: "Medium • 6 Months • 1 Class • Intake: APR26",
     title: "Data Science",
     label: "Kes. 75,000",
