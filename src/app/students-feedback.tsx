@@ -10,7 +10,7 @@ const FEEDBACKS = [
       "The instructors excel at teaching, and their hands-on methodology ensures effective understanding of the material.",
     client: "Jessica Maina",
     title: "Web Developer.",
-    img: "/image/image7.svg",
+    img: "/image/image7.svg ",
   },
   {
     feedback:
