@@ -85,7 +85,7 @@ const COURSES = [
     brochure: "/brochures/Mobile-app.pdf",
   },
   {
-    img: "/image/blogs/dsc.jpg",
+    img: "/image/blogs/dsc1.jpg",
     level: "Intermediate",
     duration: "6 months",
     intake: "APR 26",
