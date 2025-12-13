@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Card,
   CardBody,
@@ -11,7 +11,6 @@ import {
   Select,
   Option,
 } from "@material-tailwind/react";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export default function CareersPage() {
@@ -40,51 +39,52 @@ export default function CareersPage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
 
-  const filteredJobs = vacancies.filter((job) => {
-    const matchesSearch =
-      job.title.toLowerCase().includes(search.toLowerCase()) ||
-      job.description.toLowerCase().includes(search.toLowerCase());
-
-    const matchesFilter = filter === "All" ? true : job.category === filter;
-
-    return matchesSearch && matchesFilter;
-  });
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     position: "",
     message: "",
-    file: null,
+    file: null as File | null,
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const filteredJobs = vacancies.filter((job) => {
+    const matchesSearch =
+      job.title.toLowerCase().includes(search.toLowerCase()) ||
+      job.description.toLowerCase().includes(search.toLowerCase());
+
+    const matchesFilter = filter === "All" || job.category === filter;
+
+    return matchesSearch && matchesFilter;
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((s) => ({ ...s, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files?.[0] || null;
-    setFormData((s) => ({ ...s, file }));
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((s) => ({ ...s, file: e.target.files?.[0] || null }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.position) {
-      alert("Please fill name, email and position.");
+      alert("Please fill in name, email and position.");
       return;
     }
 
     setLoading(true);
 
     try {
-      // 1) Upload resume to Supabase via your API route (if file present)
       let resumeUrl = "";
 
       if (formData.file) {
@@ -97,15 +97,14 @@ export default function CareersPage() {
         });
 
         const uploadJson = await uploadRes.json();
+
         if (!uploadRes.ok || !uploadJson.url) {
-          throw new Error(uploadJson?.error || "Resume upload failed");
+          throw new Error("Resume upload failed");
         }
 
         resumeUrl = uploadJson.url;
       }
 
-      // 2) Submit application to Sheety
-      // Use the sheet's expected key. For safety we'll send under "sheet1" key since your URL ends with /sheet1
       const payload = {
         sheet1: {
           name: formData.name,
@@ -114,7 +113,7 @@ export default function CareersPage() {
           position: formData.position,
           message: formData.message,
           resume: resumeUrl,
-          created_at: new Date().toISOString(),
+          createdAt: new Date().toISOString(),
         },
       };
 
@@ -124,12 +123,8 @@ export default function CareersPage() {
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || "Failed to submit application to Sheety");
-      }
+      if (!res.ok) throw new Error("Sheety submission failed");
 
-      // success
       setSubmitted(true);
       setFormData({
         name: "",
@@ -140,156 +135,145 @@ export default function CareersPage() {
         file: null,
       });
 
-      // clear file input UI (if you want to ensure)
-      const fileInput = document.getElementById("resumeInput");
-      if (fileInput) fileInput.value = "";
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
 
       setTimeout(() => setSubmitted(false), 4000);
-    } catch (error) {
-      console.error("Submit error:", error);
-      alert("Something went wrong. Check console for details.");
+    } catch {
+      alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="px-8 py-24">
-      {/* Banner */}
-      <div className="text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl py-12 mb-16 text-white">
-        <Typography variant="h2" className="font-bold mb-3">
-          🎉 We’re Hiring!
-        </Typography>
-        <Typography className="text-blue-100 max-w-3xl mx-auto">
-          Join Somakodi School and help shape the next generation of tech talent across Kenya.
-        </Typography>
+    <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      {/* HERO SECTION */}
+      <div className="relative mb-12 lg:mb-20 border-4 border-pink-300 rounded-2xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[420px]">
+        <img
+          src="/logos/africa.jpg"
+          alt="Careers at Somakodi"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="bg-white/90 px-6 py-6 sm:px-10 sm:py-8 rounded-xl text-center max-w-xl shadow-lg">
+            <Typography variant="h2" className="font-bold text-gray-900 mb-2">
+              We’re Hiring!
+            </Typography>
+            <Typography className="text-gray-700 text-sm sm:text-base">
+              Join Somakodi School and help shape the next generation of tech
+              talent across Kenya.
+            </Typography>
+          </div>
+        </div>
       </div>
 
-      <div className="container mx-auto max-w-5xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <Typography variant="h2" className="font-bold mb-4 text-blue-gray-900">
-            Career Opportunities
-          </Typography>
-          <Typography className="text-gray-600 max-w-3xl mx-auto">
-            Explore our open roles and become part of our mission to increase access to impactful tech education.
-          </Typography>
-        </div>
-
-        {/* Search + Filters */}
-        <div className="flex flex-col lg:flex-row items-center gap-6 mb-16">
-          <Input
-            label="Search for a job..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="flex-1"
-          />
-          <Select
-            label="Filter by category"
-            value={filter}
-            onChange={(value) => setFilter(value || "All")}
-            className="w-full lg:w-64"
-          >
-            <Option value="All">All</Option>
-            <Option value="Technical">Technical</Option>
-            <Option value="Non-Technical">Non-Technical</Option>
-          </Select>
-        </div>
-
-        {/* Vacancies */}
-        {filteredJobs.length === 0 ? (
-          <Typography className="text-center text-gray-500 mb-16">
-            No vacancies match your search or filter.
-          </Typography>
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
-            {filteredJobs.map((job, index) => (
-              <Card key={index} className="border border-gray-200 shadow-sm">
-                <CardBody>
-                  <Typography variant="h4" className="font-semibold mb-3">
-                    {job.title}
-                  </Typography>
-
-                  <Typography className="text-blue-600 font-medium mb-3">
-                    {job.category}
-                  </Typography>
-
-                  <Typography className="text-gray-700 mb-4">
-                    {job.description}
-                  </Typography>
-
-                  <Typography className="font-medium text-red-600 mb-6">
-                    Application Deadline: {job.deadline}
-                  </Typography>
-
-                  <div className="flex items-center gap-4">
-                    <a href={job.pdf} download className="flex-1">
-                      <Button color="blue-gray" className="w-full">
-                        View Job Description
-                      </Button>
-                    </a>
-
-                    <Button
-                      color="blue"
-                      className="flex-1"
-                      onClick={() => {
-                        // scroll to form & preselect position
-                        setFormData((s) => ({ ...s, position: job.title }));
-                        const el = document.getElementById("applyForm");
-                        el?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                    >
-                      Apply Below
-                    </Button>
-                  </div>
-                </CardBody>
-              </Card>
-            ))}
+      <div className="max-w-6xl mx-auto">
+        {/* SEARCH & FILTER */}
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end mb-10">
+          <div className="flex-1">
+            <Input
+              label="Search for a job..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
-        )}
 
-        {/* Application Form */}
-        <div id="applyForm" className="max-w-3xl mx-auto">
-          <Card className="shadow-md border border-gray-200">
+          <div className="w-full lg:w-64">
+            <Select
+              variant="outlined"
+              label="Filter by category"
+              value={filter}
+              onChange={(val) => setFilter(val || "All")}
+            >
+              <Option value="All">All</Option>
+              <Option value="Technical">Technical</Option>
+              <Option value="Non-Technical">Non-Technical</Option>
+            </Select>
+          </div>
+        </div>
+
+        {/* JOB CARDS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mb-16">
+          {filteredJobs.map((job, i) => (
+            <Card key={i}>
+              <CardBody>
+                <Typography variant="h5">{job.title}</Typography>
+                <Typography className="text-blue-600 text-sm mb-2">
+                  {job.category}
+                </Typography>
+                <Typography className="text-sm mb-4">
+                  {job.description}
+                </Typography>
+                <Typography className="text-red-600 text-sm">
+                  Deadline: {job.deadline}
+                </Typography>
+
+                <div className="flex gap-3 mt-6">
+                  <a
+                    href={job.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="outlined" className="w-full">
+                      View JD
+                    </Button>
+                  </a>
+                  <Button
+                    className="flex-1"
+                    onClick={() => {
+                      setFormData((s) => ({ ...s, position: job.title }));
+                      document
+                        .getElementById("applyForm")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    Apply
+                  </Button>
+                </div>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+
+        {/* APPLY SECTION */}
+        <div
+          id="applyForm"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch"
+        >
+          <div className="border-4 border-pink-300 rounded-2xl overflow-hidden flex">
+            <img
+              src="/logos/together.jpg"
+              alt="Join Somakodi"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <Card>
             <CardBody>
-              <Typography variant="h3" className="mb-6 font-bold">
+              <Typography variant="h4" className="mb-4">
                 Apply for a Position
               </Typography>
 
               {submitted && (
-                <div className="bg-green-100 text-green-700 px-4 py-3 rounded-lg mb-6 text-sm text-center">
-                  🎉 Your application has been submitted successfully!
+                <div className="bg-green-100 text-green-700 p-3 rounded mb-4 text-center text-sm">
+                  🎉 Application submitted successfully!
                 </div>
               )}
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <Input
-                  label="Full Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  label="Email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  label="Phone Number"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <Input label="Full Name" name="name" value={formData.name} onChange={handleChange} required />
+                <Input label="Email" name="email" value={formData.email} onChange={handleChange} required />
+                <Input label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} required />
 
                 <Select
                   label="Position Applying For"
                   value={formData.position}
-                  onChange={(val) => setFormData((s) => ({ ...s, position: val || "" }))}
+                  onChange={(val) =>
+                    setFormData((s) => ({ ...s, position: val || "" }))
+                  }
                   required
                 >
                   {vacancies.map((v, i) => (
@@ -304,21 +288,17 @@ export default function CareersPage() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                 />
 
-                <div>
-                  <label className="block mb-2 font-medium">Upload Resume (PDF / DOC)</label>
-                  <input
-                    id="resumeInput"
-                    type="file"
-                    accept=".pdf,.doc,.docx"
-                    onChange={handleFileChange}
-                    className="w-full"
-                  />
-                </div>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleFileChange}
+                  className="text-sm"
+                />
 
-                <Button type="submit" color="blue" className="w-full" disabled={loading}>
+                <Button type="submit" disabled={loading} className="w-full">
                   {loading ? "Submitting..." : "Submit Application"}
                 </Button>
               </form>
