@@ -148,7 +148,7 @@ export default function CareersPage() {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <section className="px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8">
       {/* HERO SECTION */}
       <div className="relative mb-12 lg:mb-20 border-4 border-pink-300 rounded-2xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[420px]">
         <img

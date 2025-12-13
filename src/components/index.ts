@@ -1,11 +1,11 @@
-"use client";
+// components/index.ts
+// IMPORTANT:
+// - No "use client"
+// - No re-exports of Navbar or Footer
+// - Only shared, layout-safe exports
 
-export * from "./navbar";
-export * from "./Footer";
-export * from "./layout";
-export * from "./stats-card";
-export * from "./feedback-card";
-export * from "./category-card";
-export * from "./course-card";
-export * from "./event-card";
-export * from "./fixed-plugin";
+export { Layout } from "./layout";
+export { FixedPlugin } from "./fixed-plugin";
+
+// If later you need to expose ONLY pure UI components (no hooks, no context),
+// you may add them here cautiously.

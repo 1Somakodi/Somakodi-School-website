@@ -1,5 +1,5 @@
 // components
-import { Navbar, Footer } from "@/components";
+import Footer from "@/components/Footer";
 
 // sections
 import Hero from "./hero";
@@ -13,7 +13,6 @@ import StudentsFeedback from "./students-feedback";
 export default function Campaign() {
   return (
     <>
-      <Navbar />
       <Hero />
       <OutImpressiveStats />
       <CoursesCategories />
