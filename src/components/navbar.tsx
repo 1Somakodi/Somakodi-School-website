@@ -83,10 +83,10 @@ export default function Navbar() {
             {/* DESKTOP ACTIONS */}
             <div className="hidden items-center gap-4 lg:flex">
               <Link href="/#events">
-                <Button variant="text">Events</Button>
+                <Button variant="text" className="btn-soft">Events</Button>
               </Link>
               <Link href="/scholarships">
-                <Button color="gray">Financial Aid</Button>
+                <Button className="btn-primary">Financial Aid</Button>
               </Link>
             </div>
 

@@ -217,12 +217,12 @@ export default function CareersPage() {
                     rel="noopener noreferrer"
                     className="flex-1"
                   >
-                    <Button variant="outlined" className="w-full">
+                    <Button variant="outlined" className="btn-soft">
                       View JD
                     </Button>
                   </a>
                   <Button
-                    className="flex-1"
+                    className=" btn-primary flex-1"
                     onClick={() => {
                       setFormData((s) => ({ ...s, position: job.title }));
                       document
@@ -298,7 +298,7 @@ export default function CareersPage() {
                   className="text-sm"
                 />
 
-                <Button type="submit" disabled={loading} className="w-full">
+                <Button type="submit" disabled={loading} className="btn-primary">
                   {loading ? "Submitting..." : "Submit Application"}
                 </Button>
               </form>

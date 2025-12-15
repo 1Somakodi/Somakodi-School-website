@@ -101,9 +101,9 @@ export function Footer() {
             </Typography>
             <ul className="space-y-3 text-gray-600">
               <li><Link href="/#about-us">About Us</Link></li>
-              <li><Link href="/#ourcourses">Courses</Link></li>
               <li><Link href="/careers">Careers</Link></li>
               <li><Link href="/scholarships">Financial Aid</Link></li>
+              <li><Link href="/inquiry">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -123,7 +123,7 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Button
-                className="bg-gradient-to-r from-blue-600 to-indigo-600"
+                className="btn-primary"
                 onClick={handleSubscribe}
                 disabled={loading}
               >

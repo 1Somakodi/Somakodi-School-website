@@ -31,7 +31,7 @@ function Hero() {
             </Typography>
             <div className="mb-8 flex justify-center gap-4 lg:justify-start">
               <a href="#ourcourses">
-                <Button color="gray">View All Courses</Button>
+                <Button className="btn-primary">View All Courses</Button>
               </a>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4 lg:justify-start">

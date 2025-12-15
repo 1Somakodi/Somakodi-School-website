@@ -21,6 +21,7 @@ interface CourseCardProps {
   title: string;
   desc: string;
   label: string;
+  slug: string;
   level?: string;
   duration?: string;
   intake?: string;
@@ -33,6 +34,7 @@ export function CourseCard({
   title,
   desc,
   label,
+  slug,
   level,
   duration,
   intake,
@@ -94,12 +96,14 @@ export function CourseCard({
 
         {/* BUTTONS */}
         <div className="grid grid-cols-2 gap-3">
-          <Button variant="outlined" className="w-full">
-            {label}
-          </Button>
+          <Link href={`/courses/${slug}`} className="w-full">
+            <Button variant="outlined" className="btn-secondary">
+              {label}
+            </Button>
+          </Link>
 
           <Link href={`/register?course=${encodeURIComponent(title)}`}>
-            <Button color="blue" className="w-full">
+            <Button color="blue" className="btn-primary">
               Apply
             </Button>
           </Link>
@@ -113,7 +117,7 @@ export function CourseCard({
             rel="noopener noreferrer"
             className="block mt-3"
           >
-            <Button color="blue" variant="outlined" className="w-full">
+            <Button color="blue" variant="outlined" className="btn-soft">
               Open Brochure
             </Button>
           </a>
