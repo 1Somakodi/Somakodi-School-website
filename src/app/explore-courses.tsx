@@ -94,9 +94,9 @@ const COURSES = [
   },
   {
     img: "/image/blogs/dsc1.jpg",
-    level: "Intermediate",
+    level: "Mid-level",
     duration: "6 months",
-    intake: "APR 26",
+    intake: "Apr 26",
     title: "Data Science",
     slug : "data-science",
     label: "view more",

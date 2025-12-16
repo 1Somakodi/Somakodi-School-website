@@ -37,7 +37,7 @@ const STATS = [
 
 export function OutImpressiveStats() {
   return (
-    <section id="about-us" className="px-8 pt-20 lg:pt-28">
+    <section id="about-us" className="px-8 pt-28 lg:pt-36 mt-16 lg:mt-24">
       <div className="container mx-auto text-center lg:text-left">
         <div className="grid place-items-center text-center">
           <Typography variant="h2" color="blue-gray" className="mb-2 text-4xl">
