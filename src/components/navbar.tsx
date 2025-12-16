@@ -29,22 +29,6 @@ const NAV_MENU = [
   },
 ];
 
-function NavItem({
-  children,
-  href,
-}: {
-  children: React.ReactNode;
-  href: string;
-}) {
-  return (
-    <li>
-      <Link href={href} className="flex items-center gap-2">
-        {children}
-      </Link>
-    </li>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);
 
@@ -67,27 +51,29 @@ export default function Navbar() {
             {/* DESKTOP MENU */}
             <ul className="ml-10 hidden items-center gap-8 lg:flex">
               {NAV_MENU.map(({ name, icon: Icon, href }) => (
-                <NavItem key={name} href={href}>
-                  <Icon className="h-5 w-5" />
-                  <Typography
-                    variant="paragraph"
-                    color="gray"
-                    className="font-medium text-gray-900 hover:text-orange-600 transition"
-                  >
-                    {name}
-                  </Typography>
-                </NavItem>
+                <li key={name}>
+                  <Link href={href} className="flex items-center gap-2 hover:text-orange-600 transition">
+                    <Icon className="h-5 w-5 text-gray-900" />
+                    <Typography
+                      variant="paragraph"
+                      color="gray"
+                      className="font-medium text-gray-900"
+                    >
+                      {name}
+                    </Typography>
+                  </Link>
+                </li>
               ))}
             </ul>
 
             {/* DESKTOP ACTIONS */}
             <div className="hidden items-center gap-4 lg:flex">
-              <Link href="/#events" passHref legacyBehavior>
+              <Link href="/#events">
                 <Button variant="text" className="btn-soft">
                   Events
                 </Button>
               </Link>
-              <Link href="/scholarships" passHref legacyBehavior>
+              <Link href="/scholarships">
                 <Button variant="filled" className="btn-primary">
                   Financial Aid
                 </Button>
@@ -113,42 +99,47 @@ export default function Navbar() {
           <Collapse open={open}>
             <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
               <ul className="flex flex-col gap-4">
-                {/* NAV MENU ITEMS */}
                 {NAV_MENU.map(({ name, icon: Icon, href }) => (
-                  <Link key={name} href={href} passHref legacyBehavior>
+                  <Link key={name} href={href}>
                     <Button
                       variant="text"
                       fullWidth
-                      className="justify-start gap-2 text-gray-900 font-medium"
+                      className="flex items-center gap-2 justify-start text-gray-900 font-medium hover:text-orange-600 transition"
                       onClick={() => setOpen(false)}
                     >
-                      <Icon className="h-5 w-5" />
-                      {name}
+                      <Icon className="h-5 w-5 text-gray-900" />
+                      <Typography className="font-medium text-gray-900">
+                        {name}
+                      </Typography>
                     </Button>
                   </Link>
                 ))}
 
-                {/* EVENTS BUTTON */}
-                <Link href="/#events" passHref legacyBehavior>
+                <Link href="/#events">
                   <Button
                     variant="text"
                     fullWidth
-                    className="justify-start"
+                    className="flex items-center gap-2 justify-start text-gray-900 font-medium hover:text-orange-600 transition"
                     onClick={() => setOpen(false)}
                   >
-                    Events
+                    <RectangleStackIcon className="h-5 w-5 text-gray-900" />
+                    <Typography className="font-medium text-gray-900">
+                      Events
+                    </Typography>
                   </Button>
                 </Link>
 
-                {/* FINANCIAL AID BUTTON */}
-                <Link href="/scholarships" passHref legacyBehavior>
+                <Link href="/scholarships">
                   <Button
                     variant="text"
                     fullWidth
-                    className="justify-start"
+                    className="flex items-center gap-2 justify-start text-gray-900 font-medium hover:text-orange-600 transition"
                     onClick={() => setOpen(false)}
                   >
-                    Financial Aid
+                    <UserCircleIcon className="h-5 w-5 text-gray-900" />
+                    <Typography className="font-medium text-gray-900">
+                      Financial Aid
+                    </Typography>
                   </Button>
                 </Link>
               </ul>
