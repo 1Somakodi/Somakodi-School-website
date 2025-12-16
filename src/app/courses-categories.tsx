@@ -48,14 +48,34 @@ const CATEGORIES = [
 export function CoursesCategories() {
   return (
     <section className="container mx-auto px-8 py-36">
-      <div className="mb-20 grid place-items-center text-center">
-        <Typography variant="h2" color="blue-gray" className="my-3">
-          Courses Categories
-        </Typography>
-        <Typography variant="lead" className="!text-gray-500 lg:w-11/12">
-          A comprehensive selection of courses designed to empower you with the skills you need to thrive in the dynamic world of Tech. Explore our hands-on programs that cover both the foundations and advanced topics, from building responsive web applications & mobile apps to mastering full-stack development, data science, cybersecurity, and artificial intelligence. Each course is carefully crafted to provide real-world experience, practical projects, and career-ready skills. Whether you’re starting your tech journey or looking to upskill, Somakodi School has the right course for you.
-        </Typography>
-      </div>
+<div className="mb-20 grid place-items-center px-4 sm:px-0 text-center">
+  <Typography variant="h2" color="blue-gray" className="my-3">
+    Courses Categories
+  </Typography>
+
+  <Typography
+  variant="lead"
+  className="
+    mx-auto
+              mb-12
+              w-full
+              !text-gray-500
+              text-left
+              sm:text-justify
+              lg:w-10/12
+  "
+>
+    A comprehensive selection of courses designed to empower you with the skills
+    you need to thrive in the dynamic world of Tech. Explore our hands-on programs
+    that cover both the foundations and advanced topics, from building responsive
+    web applications & mobile apps to mastering full-stack development, data
+    science, cybersecurity, and artificial intelligence. Each course is carefully
+    crafted to provide real-world experience, practical projects, and career-ready
+    skills. Whether you’re starting your tech journey or looking to upskill,
+    Somakodi School has the right course for you.
+  </Typography>
+</div>
+
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <Card
           color="gray"

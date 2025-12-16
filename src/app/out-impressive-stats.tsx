@@ -45,13 +45,26 @@ export function OutImpressiveStats() {
           </Typography>
           <Typography
             variant="lead"
-            className="mx-auto mb-12 w-full !text-gray-500 lg:w-10/12 text-justify"
-            style={{ textAlign: "justify" }}
+            className="
+              mx-auto
+              mb-12
+              w-full
+              !text-gray-500
+              text-left
+              sm:text-justify
+              lg:w-10/12
+            "
           >
-            Somakodi School is where future tech leaders are made! We deliver fast-paced, hands-on training in Software Engineering, Data Science, Cybersecurity, and more. Our Courses are designed to get you job-ready, confident, and unstoppable within a short time. With a strong focus on accessibility and community, we open doors for learners from all backgrounds to break into the digital world. At Somakodi, we don’t just teach tech skills, we ignite potential and launch careers.
+            Somakodi School is where future tech leaders are made! We deliver fast-paced,
+            hands-on training in Software Engineering, Data Science, Cybersecurity, and more.
+            Our Courses are designed to get you job-ready, confident, and unstoppable within
+            a short time. With a strong focus on accessibility and community, we open doors
+            for learners from all backgrounds to break into the digital world. At Somakodi,
+            we don’t just teach tech skills, we ignite potential and launch careers.
           </Typography>
+
         </div>
-        <div className="grid gap-y-16 gap-x-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:gap-10">
           {STATS.map((props, key) => (
             <StatsCard key={key} {...props} />
           ))}
