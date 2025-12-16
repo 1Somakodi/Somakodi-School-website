@@ -1,12 +1,23 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 
 export default function RegisterForm() {
   const params = useSearchParams();
-  const course = params.get("course") || "Somakodi Program";
+  const courseFromUrl = params.get("course") || "Somakodi Program";
+  const planFromUrl = params.get("plan") || "";
+
+  const [course, setCourse] = useState("Somakodi Program");
+  const [plan, setPlan] = useState("");
+
+    useEffect(() => {
+      if (courseFromUrl) setCourse(courseFromUrl);
+      if (planFromUrl) setPlan(planFromUrl);
+    }, [courseFromUrl, planFromUrl]);
+
+
 
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -37,6 +48,7 @@ export default function RegisterForm() {
         body: JSON.stringify({
           data: {
             course,
+            plan,
             fullName: formData.fullName,
             email: formData.email,
             phone: formData.phone,
@@ -64,8 +76,8 @@ export default function RegisterForm() {
           Application Received 🎉
         </h1>
         <p className="mt-2 text-gray-700 max-w-md">
-          Thank you for applying to the <strong>{course}</strong> program at
-          Somakodi School. Our Admissions Team will contact you shortly.
+          Thank you for applying to the <strong>{course}</strong> program
+          {plan && <> (<strong>{plan}</strong> Plan)</>}.
         </p>
 
         <a
@@ -96,6 +108,18 @@ export default function RegisterForm() {
             <input
               type="text"
               value={course}
+              readOnly
+              className="w-full rounded-xl border-gray-300 bg-gray-100 px-4 py-3"
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">
+              Selected Plan
+            </label>
+            <input
+              type="text"
+              value={plan}
               readOnly
               className="w-full rounded-xl border-gray-300 bg-gray-100 px-4 py-3"
             />

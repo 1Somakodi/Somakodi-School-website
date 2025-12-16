@@ -17,6 +17,8 @@ import { StarIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import Footer from "@/components/Footer";
 
 export default function SoftwareEngineeringCoursePage() {
+  const courseName = "Streamline Your CSS Workflow";
+
   const [open, setOpen] = useState<number | null>(1);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
@@ -120,7 +122,7 @@ export default function SoftwareEngineeringCoursePage() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Link href="/register">
+            <Link href={`/register?course=${encodeURIComponent(courseName)}`}>
               <Button size="lg" className="bg-indigo-600">
                 Enroll Now
               </Button>
@@ -345,9 +347,12 @@ export default function SoftwareEngineeringCoursePage() {
                     ))}
                   </ul>
 
-                  <Button fullWidth className={plan.popular ? "bg-indigo-600" : ""}>
+                <Link href={`/register?course=${encodeURIComponent(courseName)}&plan=${encodeURIComponent(plan.title)}`}>
+                  <Button fullWidth className={plan.popular ? "bg-blue-600" : ""}>
                     Enroll
                   </Button>
+                </Link>
+
                 </CardBody>
               </Card>
             ))}

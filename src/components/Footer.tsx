@@ -87,10 +87,10 @@ export function Footer() {
               Popular Programs
             </Typography>
             <ul className="space-y-3 text-gray-600">
-              <li><Link href="/#ourcourses">Software Engineering</Link></li>
-              <li><Link href="/#ourcourses">Web Design</Link></li>
-              <li><Link href="/#ourcourses">Cybersecurity</Link></li>
-              <li><Link href="/#ourcourses">Data Science</Link></li>
+              <li><Link href="/courses/software-engineering">Software Engineering</Link></li>
+              <li><Link href="/courses/website-design">Web Design</Link></li>
+              <li><Link href="/courses/aifullstack">AI Fullstack Dev</Link></li>
+              <li><Link href="/courses/data-science">Data Science</Link></li>
             </ul>
           </div>
 
