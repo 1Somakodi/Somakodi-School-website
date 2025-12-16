@@ -288,13 +288,18 @@ export default function CareersPage() {
                   onChange={handleChange}
                 />
 
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  onChange={handleFileChange}
-                  className="text-sm"
-                />
+               <div className="space-y-1">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                    className="text-sm"
+                  />
+                  <Typography variant="small" className="text-gray-600">
+                    📄 Please upload your CV (PDF or Word document)
+                  </Typography>
+                </div>
 
                 <Button type="submit" disabled={loading} className="btn-primary">
                   {loading ? "Submitting..." : "Submit Application"}
