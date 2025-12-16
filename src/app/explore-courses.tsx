@@ -5,7 +5,7 @@ import CourseCard from "@/components/course-card";
 
 const COURSES = [
   {
-    img: "/image/blogs/blog4.jpg",
+    img: "/image/blogs/blog41.jpg",
     level: "Beginner",
     duration: "5 weeks",
     intake: "JAN 26",
@@ -16,7 +16,7 @@ const COURSES = [
     brochure: "/brochures/Web-design.pdf",
   },
   {
-    img: "/image/blogs/blog3.svg",
+    img: "/image/blogs/senew.jpg",
     level: "Beginner",
     duration: "8 months",
     intake: "FEB 26",

@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
-import { Typography, Card, CardBody, Avatar } from "@material-tailwind/react";
+import { Typography, Card, CardBody, Avatar, Button } from "@material-tailwind/react";
+
 
 function TESTIMONIAL() {
   return (
@@ -11,11 +13,11 @@ function TESTIMONIAL() {
           <CardBody className="col-span-full gap-10 place-items-center overflow-visible grid grid-cols-1 lg:grid-cols-4">
             
             {/* Left Image */}
-            <div className="w-full xl:w-[600px] flex items-center overflow-hidden rounded-xl justify-center col-span-2 h-full">
+            <div className="w-full xl:w-[600px] flex items-center overflow-hidden rounded-xl justify-center col-span-2 h-full border-4 border-pink-500 group">
               <Image
                 width={768}
                 height={768}
-                src="/image/blogs/blog6.svg"
+                src="/image/blogs/senew.jpg"
                 alt="testimonial image"
                 className="w-full h-full scale-110 object-cover"
               />
@@ -49,28 +51,14 @@ function TESTIMONIAL() {
                 design, develop, test, and maintain complete software systems,
                 giving you the skills needed to contribute to modern software
                 teams and tackle complex engineering challenges.
+              
               </Typography>
-
-              {/* Tutor Section */}
-              <div className="flex items-center mt-8 gap-4">
-                <Avatar
-                  variant="circular"
-                  src="/image/aln.jpg"
-                  alt="spotify"
-                  size="md"
-                />
-                <div>
-                  <Typography variant="h6" color="blue-gray" className="mb-0.5">
-                    Allan Ochieng
-                  </Typography>
-                  <Typography
-                    variant="small"
-                    className="font-normal !text-gray-500"
-                  >
-                    Tutor Somakodi
-                  </Typography>
-                </div>
-              </div>
+              
+              <Link href="/courses/software-engineering">
+                <Button size="md" color="blue" className="btn-primary mt-4">
+                  View More
+                </Button>
+              </Link>
 
             </div>
           </CardBody>

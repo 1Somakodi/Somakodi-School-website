@@ -159,59 +159,6 @@ export default function SoftwareEngineeringCoursePage() {
         </div>
       </section>
 
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-        <Typography variant="h2" className="mb-12 text-center">
-          What Our Students Say
-        </Typography>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((item, i) => (
-            <Card
-              key={i}
-              className="rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
-              <CardBody>
-                {/* Star Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, idx) => (
-                    <StarIcon
-                      key={idx}
-                      className="h-4 w-4 text-yellow-500 animate-pulse"
-                    />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <Typography className="text-sm mb-6 text-gray-700">
-                  “{item.text}”
-                </Typography>
-
-                {/* Profile */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl border-2 border-red-500 overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <Typography className="font-semibold text-sm">
-                      {item.name}
-                    </Typography>
-                    <Typography className="text-xs text-gray-500">
-                      {item.role}
-                    </Typography>
-                  </div>
-                </div>
-              </CardBody>
-            </Card>
-          ))}
-        </div>
-      </section>
 
       {/* ================= PREREQUISITES ================= */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
@@ -399,6 +346,61 @@ export default function SoftwareEngineeringCoursePage() {
           ))}
         </div>
       </section>
+
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+        <Typography variant="h2" className="mb-12 text-center">
+          What Our Students Say
+        </Typography>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((item, i) => (
+            <Card
+              key={i}
+              className="rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <CardBody>
+                {/* Star Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, idx) => (
+                    <StarIcon
+                      key={idx}
+                      className="h-4 w-4 text-yellow-500 animate-pulse"
+                    />
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <Typography className="text-sm mb-6 text-gray-700">
+                  “{item.text}”
+                </Typography>
+
+                {/* Profile */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl border-2 border-red-500 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={48}
+                      height={48}
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <Typography className="font-semibold text-sm">
+                      {item.name}
+                    </Typography>
+                    <Typography className="text-xs text-gray-500">
+                      {item.role}
+                    </Typography>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+      </section>
+
 
 {/* ================= FAQ ================= */}
 

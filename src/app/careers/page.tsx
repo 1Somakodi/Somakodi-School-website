@@ -213,8 +213,6 @@ export default function CareersPage() {
                 <div className="flex gap-3 mt-6">
                   <a
                     href={job.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="flex-1"
                   >
                     <Button variant="outlined" className="btn-soft">
