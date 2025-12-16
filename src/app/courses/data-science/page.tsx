@@ -91,7 +91,7 @@ export default function SoftwareEngineeringCoursePage() {
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-100 text-gray-900">
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+        <div className="order-2 lg:order-1">
           <div className="flex gap-2 mb-6">
             <Chip value="online" className="bg-indigo-100 text-indigo-700" />
             <Chip value="Intermediate" className="bg-gray-100 text-gray-700" />
