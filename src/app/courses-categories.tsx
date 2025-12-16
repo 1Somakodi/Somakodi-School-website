@@ -57,12 +57,12 @@ export function CoursesCategories() {
   variant="lead"
   className="
     mx-auto
-              mb-12
-              w-full
-              !text-gray-500
-              text-left
-              sm:text-justify
-              lg:w-10/12
+    mb-12
+    w-full
+    !text-gray-500
+    text-left
+    sm:text-justify
+    lg:w-10/12
   "
 >
     A comprehensive selection of courses designed to empower you with the skills

@@ -53,7 +53,7 @@ export default function Navbar() {
       <div className="mx-auto container">
         <MTNavbar
           blurred
-          color="transparent" // keep transparent so blur works
+          color="transparent"
           className="z-50 mt-6 relative border-0 pr-3 py-3 pl-6 bg-orange-200/70 backdrop-blur-md"
         >
           <div className="flex items-center justify-between">
@@ -82,11 +82,15 @@ export default function Navbar() {
 
             {/* DESKTOP ACTIONS */}
             <div className="hidden items-center gap-4 lg:flex">
-              <Link href="/#events">
-                <Button variant="text" className="btn-soft">Events</Button>
+              <Link href="/#events" passHref legacyBehavior>
+                <Button variant="text" className="btn-soft">
+                  Events
+                </Button>
               </Link>
-              <Link href="/scholarships">
-                <Button className="btn-primary">Financial Aid</Button>
+              <Link href="/scholarships" passHref legacyBehavior>
+                <Button variant="filled" className="btn-primary">
+                  Financial Aid
+                </Button>
               </Link>
             </div>
 
@@ -109,28 +113,41 @@ export default function Navbar() {
           <Collapse open={open}>
             <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
               <ul className="flex flex-col gap-4">
+                {/* NAV MENU ITEMS */}
                 {NAV_MENU.map(({ name, icon: Icon, href }) => (
-                  <Link
-                    key={name}
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center gap-2"
-                  >
-                    <Icon className="h-5 w-5" />
-                    <Typography className="font-medium text-gray-900">
+                  <Link key={name} href={href} passHref legacyBehavior>
+                    <Button
+                      variant="text"
+                      fullWidth
+                      className="justify-start gap-2 text-gray-900 font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      <Icon className="h-5 w-5" />
                       {name}
-                    </Typography>
+                    </Button>
                   </Link>
                 ))}
 
-                <Link href="/#events" onClick={() => setOpen(false)}>
-                  <Button variant="text" fullWidth>
+                {/* EVENTS BUTTON */}
+                <Link href="/#events" passHref legacyBehavior>
+                  <Button
+                    variant="text"
+                    fullWidth
+                    className="justify-start"
+                    onClick={() => setOpen(false)}
+                  >
                     Events
                   </Button>
                 </Link>
 
-                <Link href="/scholarships" onClick={() => setOpen(false)}>
-                  <Button color="gray" fullWidth>
+                {/* FINANCIAL AID BUTTON */}
+                <Link href="/scholarships" passHref legacyBehavior>
+                  <Button
+                    variant="text"
+                    fullWidth
+                    className="justify-start"
+                    onClick={() => setOpen(false)}
+                  >
                     Financial Aid
                   </Button>
                 </Link>
