@@ -111,17 +111,13 @@ export function CourseCard({
 
         {/* BROCHURE */}
         {brochure && (
-          <a
-            href={brochure}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-3"
-          >
+          <a href={brochure} className="block mt-3">
             <Button color="blue" variant="outlined" className="btn-soft">
               Open Brochure
             </Button>
           </a>
         )}
+
       </CardBody>
     </Card>
   );

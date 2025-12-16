@@ -30,7 +30,7 @@ export default function SoftwareEngineeringCoursePage() {
 
   const testimonials = [
     {
-      text: "This course went beyond theory. We learned practical skills like workplace ethics, problem-solving, and leadership mindset. The sessions were engaging, relatable, and applicable to everyday work situations. It has truly changed how I approach my career.",
+      text: "This course went beyond theory. We learned practical skills like workplace ethics, problem-solving, good presentation skills and leadership mindset. The sessions were engaging, relatable, and applicable to everyday work situations. It has truly changed how I approach my career.",
       name: "Faith W.",
       role: "Program Graduate",
       image: "/image/blogs/faith.jpg",
