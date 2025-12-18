@@ -86,13 +86,17 @@ export default function Navbar() {
 
             {/* DESKTOP ACTIONS */}
             <div className="hidden items-center gap-4 lg:flex">
-              <button
-                onClick={() => handleScroll("events")}
-              >
+              <Link href="/blog">
+                <Button variant="text" className="btn-soft">
+                  Blogs
+                </Button>
+              </Link>
+
+              <Link href="/events">
                 <Button variant="text" className="btn-soft">
                   Events
                 </Button>
-              </button>
+              </Link>
 
               <Link href="/scholarships">
                 <Button variant="filled" className="btn-primary">

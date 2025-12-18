@@ -37,7 +37,7 @@ export function EventCard({ img, title, desc, buttonLabel }: EventCardProps) {
 
       <CardBody className="p-0">
         <a
-          href="#"
+          href="/events"
           className="text-blue-gray-900 transition-colors hover:text-gray-800"
         >
           <Typography variant="h5" className="mb-2">
