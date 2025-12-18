@@ -1,3 +1,5 @@
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 import EventRegistrationForm from "@/components/EventRegistrationForm";
 
