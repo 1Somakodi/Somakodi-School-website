@@ -499,6 +499,64 @@ Personal online safety is an essential skill in today’s digital world. While n
 `,
 },
 {
+  id: "roblox-coding-for-kids-kenya",
+  title: "Roblox & Coding for Kids: Learning Through Play in Kenya",
+  category: "Kids & Education",
+  excerpt:
+    "Coding doesn’t have to begin with complex syntax or intimidating lessons. For children, the best way to learn programming is through play. Roblox is one of the most effective platforms helping kids learn coding, creativity, and problem-solving while having fun. Roblox introduces children in Kenya to coding and future-ready digital skills.",
+  image: "/image/blogs/events/roblox1.jpg",
+  content: `
+## Introduction
+For many children, games are more than just entertainment. They are spaces where imagination, creativity, and curiosity come alive. What many parents may not realize is that platforms like Roblox can transform this love for gaming into a meaningful learning experience. Roblox allows children not only to play games, but to design and build them, introducing coding concepts in a way that feels natural and exciting.
+
+Roblox is a massive online platform where millions of people create and play games and 3D experiences using the Roblox Studio software. This can now be well-used in education with lots of teaching-specific tools and games available. Roblox can work as a sandbox experience to teach coding, storytelling, and design. It uses the Lua programming language, making it a useful CS tool as well as a space where students can work collaboratively to create together.
+
+The platform has some impressive safety features in place, with a view to this being used in schools for education. Appropriate guidelines are available, but it's still worth keeping an eye as students could get into the wider platform, which might not all be appropriate.
+
+In Kenya, where digital skills are becoming increasingly important, exposing children to coding at an early age helps build confidence and curiosity around technology. Roblox uses simple scripting and visual game design tools to introduce programming concepts without overwhelming young learners. Learning happens through experimentation, creativity, and play.
+
+![Kids learning through games](/image/blogs/events/roblox2.jpg)
+
+## What Is Roblox and Why Is It Powerful?
+Roblox is an online platform where users can create, share, and play games built by other users. Unlike traditional video games, Roblox puts children in the role of creators. They learn how game worlds are designed, how characters interact, and how rules and logic control gameplay.
+
+Through Roblox Studio, children are gradually introduced to core programming ideas such as logical thinking, cause and effect, repetition, and basic scripting using the Lua programming language. Because kids can instantly see the results of their actions inside a game, learning feels rewarding and engaging. This immediate feedback keeps them motivated and eager to explore more.
+
+## Learning Coding Through Play
+One of the biggest strengths of Roblox is that it removes fear from coding. Instead of starting with long lines of code, children begin by moving objects, adjusting settings, and slowly adding scripts to control how things behave in the game world.
+
+As children build games, they naturally learn how to give instructions step by step, how to break big ideas into smaller tasks, and how to test and improve their work. These problem-solving skills extend beyond coding and support learning in subjects like mathematics, science, and creative writing.
+
+![Game creation](/image/blogs/events/roblox3.jpg)
+
+## Building Creativity, Confidence, and Problem-Solving Skills
+Roblox encourages children to think like creators rather than just consumers. They design characters, create worlds, and invent rules and stories. This process strengthens creativity while also developing logical thinking.
+
+When something in a game does not work as expected, children learn patience and resilience. Debugging becomes part of the learning journey. Instead of giving up, they experiment, ask questions, and try again. Completing a playable game gives children a strong sense of achievement and builds confidence in their ability to create technology.
+
+## Collaboration and Digital Awareness
+Roblox also introduces children to collaboration and teamwork. Many projects involve sharing ideas, working together, and improving games based on feedback. These experiences help children develop communication skills and learn how to collaborate respectfully with others.
+
+Children are also introduced to important digital citizenship skills, including online safety, responsible communication, and respect for other creators’ work. These lessons are essential as children grow up in an increasingly connected digital world.
+
+![Kids collaborating](/image/blogs/events/roblox4.jpg)
+
+## Common Myths About Roblox and Coding for Kids
+ -  Many people believe Roblox is simply a game and a waste of time. When used with guidance and purpose, it becomes a learning platform where children build, experiment, and problem-solve.
+
+-  Some parents worry that coding is too difficult for children. In reality, children often learn faster when concepts are introduced visually and playfully. Roblox allows kids to learn at their own pace without pressure.
+
+-  There is also a common belief that a child must be good at mathematics to code. While logical thinking is important, advanced math is not required at beginner levels. Curiosity and creativity matter far more.
+
+-  Another concern is screen time. While excessive and unstructured screen time can be unhealthy, structured and educational use of technology can be highly beneficial. Coding turns screen time into productive learning time.
+
+-  Finally, many assume coding is only useful for children who want future tech careers. In truth, coding builds problem-solving, creativity, and confidence skills that are valuable in any career path.
+
+## Final Thoughts
+Roblox is more than just a game. It is a powerful introduction to coding, creativity, and digital skills for children. For kids in Kenya, early exposure to platforms like Roblox helps prepare them for a future where technology is part of everyday life. With the right guidance and support, children can learn how to think logically, solve problems, and create confidently, all while having fun. At Somakodi, we believe learning should be engaging, practical, and accessible, and coding for kids is one of the best places to start.
+`,
+},
+{
   id: "ai-slop-and-social-media-user-impact",
   title: "AI Slop and Social Media: How It Affects You as a User",
   category: "Digital Wellbeing",
