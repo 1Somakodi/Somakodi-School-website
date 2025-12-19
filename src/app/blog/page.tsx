@@ -87,6 +87,69 @@ Starting a tech career in Kenya is achievable for anyone willing to commit to le
 `,
 },
 {
+  id: "vibe-coding-vs-learning-to-code",
+  title: "Vibe Coding vs Learning to Code: What Really Builds a Tech Career?",
+  category: "Careers",
+  excerpt:
+    "With AI tools making it easier than ever to generate code instantly, a new trend known as 'vibe coding' has emerged. It promises fast results with minimal effort, but does it actually prepare you for a real tech career? Lets break down vibe coding versus learning to code properly, and explain which path truly sets you up for long-term success in tech.",
+  image: "/image/blogs/events/vibe.jpg",
+  content: `
+## Introduction
+The way people learn tech is changing rapidly. Today, anyone can describe an idea to an AI tool and get working code in seconds. This has given rise to what many call vibe coding which is building applications by relying heavily on AI-generated code, tutorials, and copy-paste solutions, often without fully understanding how or why the code works. On the other hand, learning to code focuses on understanding fundamentals, problem-solving, and gradually building skills through practice. Both approaches exist in today’s tech landscape, but they lead to very different outcomes, especially for beginners in Kenya who are aiming for real jobs, freelancing, or long-term growth. Understanding the difference early can save you time, frustration, and false expectations.
+
+## What Is Vibe Coding?
+Vibe coding is driven by speed and experimentation. You follow the “vibe” — asking AI tools to generate features, fixing errors by trial and error, and moving on once something works. This approach can feel exciting and empowering, especially for beginners who want to see results quickly.
+
+Vibe coding works well for:
+- Rapid prototypes and demos  
+- Exploring ideas without deep technical pressure  
+- Non-technical founders testing concepts  
+- Short-term personal projects  
+
+However, because the focus is on output rather than understanding, many vibe coders will struggle when things break, requirements change, or they are asked to explain their work. When an application stops working, they often don’t know where to start debugging because they didn’t write the logic themselves or understand how the different parts of the system connect. Small changes such as adding a new feature, fixing a performance issue, or integrating another service can quickly become overwhelming.
+
+In real-world settings, developers are expected to explain their decisions, justify why certain approaches were used, and collaborate with others on shared codebases. Vibe coders who rely heavily on generated solutions may find it difficult to communicate their reasoning, review other people’s code, or adapt when tools fail or produce incorrect results. Over time, this gap in understanding can limit growth, reduce confidence, and make it harder to transition from experimenting with code to working professionally in a team or production environment.
+
+![Learning tech](/image/blogs/events/vibe1.jpg)
+
+## What Does It Mean to Truly Learn to Code?
+Learning to code goes deeper than making things “work.” It involves understanding how software is structured, how logic flows, and how systems behave when things go wrong. This includes learning concepts like variables, functions, data structures, APIs, databases, and debugging.
+
+This approach takes more time and effort, but it builds:
+- Strong problem-solving skills  
+- Confidence to debug and improve code  
+- Ability to learn new languages and tools  
+- Readiness for real-world team environments  
+
+For learners aiming at employment or serious freelancing, a strong foundation in coding is essential. AI is not the enemy of learning to code, its misuse is. When learners rely on AI to do all the thinking, they miss the opportunity to build mental models, reasoning skills, and true problem-solving ability. However, when used intentionally, AI becomes a powerful learning companion rather than a crutch.
+
+The most effective learners use AI to support their growth, not replace it. They turn to AI to help explain errors and complex concepts, suggest improvements to their code, compare different approaches to solving a problem, and speed up experimentation after they understand the basics. This approach allows learners to move faster while still strengthening their understanding and confidence.
+
+Employers care deeply about this difference because real tech roles demand more than producing working code. Developers are expected to read and understand existing codebases, fix bugs under pressure, explain their decisions clearly, adapt to new tools and frameworks, and collaborate with other developers. Vibe coding alone rarely prepares learners for these realities. Learning to code builds resilience when AI fails, requirements change, or systems behave unexpectedly, it is foundational knowledge that carries professionals through.
+
+![Project work](/image/blogs/events/vibe2.jpg)
+
+## Common Myths About Vibe Coding vs Learning to Code
+1 - AI will replace the need to learn coding.
+AI changes how we code, not the need to understand it. Those who understand fundamentals will always outperform those who only rely on tools.
+
+2 - If the app works, understanding doesn’t matter.
+In production environments, maintenance, scalability, and security matter just as much as functionality. Understanding is non-negotiable.
+
+3 - Learning to code is too slow in today’s fast world.
+While learning takes time, it saves years of struggle later. Strong foundations allow faster growth over time.
+
+4 - Vibe coding is cheating.
+It’s not cheating — it’s incomplete on its own. When combined with learning, it becomes powerful. When used alone, it becomes limiting.
+
+5 - You must choose one approach forever.
+The best developers combine both. They learn deeply, then use AI to move faster and smarter.
+
+## Final Thoughts
+Vibe coding can be fun, motivating, and useful, but it is not a substitute for learning to code if your goal is a real tech career. For beginners in Kenya, especially career switchers and working professionals, investing time in fundamentals pays off in confidence, employability, and long-term growth. To suceed in as a in programming focus on practical learning that is, understanding first, building second, and using modern tools responsibly. That balance is what turns you from a beginner into a professional problem-solver.
+`,
+},
+{
   id: "inclusion-diversity-kenya-tech-landscape",
   title: "Inclusion and Diversity in Kenya’s Tech Landscape",
   category: "Industry",
