@@ -161,6 +161,9 @@ export default function SoftwareEngineeringCoursePage() {
             <Typography variant="h4" className="text-indigo-600">
               30% off
             </Typography>
+             <Typography variant="h3" className="text-indigo-600">
+             Kes. 52,500
+            </Typography>
           </div>
         </div>
       </section>
@@ -276,7 +279,7 @@ export default function SoftwareEngineeringCoursePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: "Self-Paced", price: "KES 50,000", features: ["Recorded lessons", "Projects"], popular: false },
-              { title: "Mentored", price: "KES 75,000", features: ["Live sessions", "Mentorship"], popular: true },
+              { title: "Mentored", price: "KES 52,500", features: ["Live sessions", "Mentorship"], popular: true },
               { title: "Premium", price: "KES 115,000", features: ["Career coaching", "Job placement support"], popular: false },
             ].map((plan, i) => (
               <Card
