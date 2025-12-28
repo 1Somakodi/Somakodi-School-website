@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout, FixedPlugin } from "@/components";
 
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
@@ -10,7 +11,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Somakodi School",
+  title: {
+    default: "Somakodi School",
+    template: "%s | Somakodi School",
+  },
   description:
     "At Somakodi, we believe that education should evolve with the world. That’s why we offer an innovative way to learn, blending practical, project-based training with expert mentorship to prepare learners for real-world careers in tech..",
   icons: {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Somakodi School",
     images: [
       {
-        url: "https://somakodi.org/og/senew2.jpg",
+        url: "https://somakodi.org/og/mixx.jpg",
         width: 1200,
         height: 630,
         alt: "Software Engineering at Somakodi School",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    images: ["https://somakodi.org/og/senew2.jpg"],
+    images: ["https://somakodi.org/og/mixx.jpg"],
   },
 };
 
