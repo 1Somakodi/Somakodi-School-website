@@ -1,5 +1,7 @@
 "use client";
 
+import Head from "next/head";
+import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -52,40 +54,86 @@ export default function SoftwareEngineeringCoursePage() {
   ];
 
   const faqs = [
-  {
-    question: "Do I need prior coding experience?",
-    answer:
-      "No prior coding experience is required. The course is designed for beginners, though a basic understanding of computers and how apps work will be helpful.",
-  },
-  {
-    question: "What tools and technologies will I learn?",
-    answer:
-      "You will gain hands-on experience with HTML, CSS, JavaScript, React, Node.js, Git & GitHub, databases (SQL), and modern development tools used to build real-world web applications.",
-  },
-  {
-    question: "How long is the course and what is the schedule?",
-    answer:
-      "The course runs for 8 months with flexible learning options including live sessions, recorded lessons, and hands-on projects.",
-  },
-  {
-    question: "Will I get a certificate?",
-    answer:
-      "Yes! Upon successful completion of all modules and projects, you'll receive a Somakodi Certificate of Completion that you can add to your resume and LinkedIn profile.",
-  },
-  {
-    question: "Do you provide career support after the course?",
-    answer:
-      "Yes. We provide CV reviews, interview preparation, career guidance and job placement support to help you transition into data roles.",
-  },
-  {
-    question: "What if I fall behind?",
-    answer:
-      "With our self-paced option, there's no falling behind. If you're in the mentored program, our instructors will work with you to create a catch-up plan. We're committed to your success.",
-  },
-];
+    {
+      question: "Do I need prior coding experience?",
+      answer:
+        "No prior coding experience is required. The course is designed for beginners, though a basic understanding of computers and how apps work will be helpful.",
+    },
+    {
+      question: "What tools and technologies will I learn?",
+      answer:
+        "You will gain hands-on experience with HTML, CSS, JavaScript, React, Node.js, Git & GitHub, databases (SQL), and modern development tools used to build real-world web applications.",
+    },
+    {
+      question: "How long is the course and what is the schedule?",
+      answer:
+        "The course runs for 8 months with flexible learning options including live sessions, recorded lessons, and hands-on projects.",
+    },
+    {
+      question: "Will I get a certificate?",
+      answer:
+        "Yes! Upon successful completion of all modules and projects, you'll receive a Somakodi Certificate of Completion that you can add to your resume and LinkedIn profile.",
+    },
+    {
+      question: "Do you provide career support after the course?",
+      answer:
+        "Yes. We provide CV reviews, interview preparation, career guidance and job placement support to help you transition into data roles.",
+    },
+    {
+      question: "What if I fall behind?",
+      answer:
+        "With our self-paced option, there's no falling behind. If you're in the mentored program, our instructors will work with you to create a catch-up plan. We're committed to your success.",
+    },
+  ];
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-100 text-gray-900">
+      {/* ================= HEAD ================= */}
+      <Head>
+        <title>Software Engineering Program | Somakodi</title>
+        <meta name="description" content="Learn Software Development and Cloud Fundamentals with hands-on, project-based learning. Flexible part-time remote classes for students, career changers, and professionals." />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Software Engineering Program | Somakodi" />
+        <meta property="og:description" content="Learn Software Development and Cloud Fundamentals with hands-on, project-based learning. Flexible part-time remote classes for students, career changers, and professionals." />
+        <meta property="og:url" content="https://somakodi.org/courses/software-engineering" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://somakodi.org/image/blogs/senew2.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Somakodi Software Engineering Program - Students coding on laptops" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Software Engineering Program | Somakodi" />
+        <meta name="twitter:description" content="Learn Software Development and Cloud Fundamentals with hands-on, project-based learning. Flexible part-time remote classes for students, career changers, and professionals." />
+        <meta name="twitter:image" content="https://somakodi.org/image/blogs/senew2.jpg" />
+      </Head>
+
+      {/* ================= FACEBOOK PIXEL ================= */}
+      <Script id="facebook-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '707170271808850'); 
+          fbq('track', 'PageView');
+        `}
+      </Script>
+
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: `<img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=707170271808850&ev=PageView&noscript=1"
+          />`,
+        }}
+      />
+
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1">
@@ -161,112 +209,99 @@ export default function SoftwareEngineeringCoursePage() {
             <Typography variant="h4" className="text-indigo-600">
               30% off
             </Typography>
-             <Typography variant="h3" className="text-indigo-600">
-             Kes. 52,500
+            <Typography variant="h3" className="text-indigo-600">
+              Kes. 52,500
             </Typography>
           </div>
         </div>
       </section>
 
+        {/* ================= PREREQUISITES ================= */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+          <div className="mb-12">
+            <Typography
+              variant="h3"
+              className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg mb-4"
+            >
+              Prerequisites & Requirements
+            </Typography>
 
-      {/* ================= PREREQUISITES ================= */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-        {/* Header */}
-        <div className="mb-12">
-          <Typography
-            variant="h3"
-            className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg mb-4"
-          >
-            Prerequisites & Requirements
-          </Typography>
+            <Typography className="text-gray-600 max-w-3xl">
+              Here's what you should know before starting this course to get the most out of your learning experience.
+            </Typography>
+          </div>
 
-          <Typography className="text-gray-600 max-w-3xl">
-            Here's what you should know before starting this course to get the most out of your learning experience.
-          </Typography>
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="rounded-2xl border border-indigo-400 bg-indigo-50">
+              <CardBody>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white text-sm">
+                    ✓
+                  </span>
+                  <Typography variant="h6">Programming Knowledge</Typography>
+                </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Programming Knowledge */}
-          <Card className="rounded-2xl border border-indigo-400 bg-indigo-50">
-            <CardBody>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white text-sm">
-                  ✓
-                </span>
-                <Typography variant="h6">Programming Knowledge</Typography>
-              </div>
+                <Typography className="text-indigo-600 text-sm mb-4">
+                  Required
+                </Typography>
 
-              <Typography className="text-indigo-600 text-sm mb-4">
-                Required
-              </Typography>
+                <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
+                  <li>Basic Computer Skills</li>
+                  <li>Good reading comprehension (English)</li>
+                  <li>Willingness to Learn & Practice</li>
+                </ul>
+              </CardBody>
+            </Card>
 
-              <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
-                <li>
-                  Basic Computer Skills
-                </li>
-                <li>
-                  Good reading comprehension (English)
-                </li>
-                <li>
-                  Willingness to Learn & Practice
-                </li>
-              </ul>
-            </CardBody>
-          </Card>
+            <Card className="rounded-2xl border border-indigo-400 bg-indigo-50">
+              <CardBody>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white text-sm">
+                    ✓
+                  </span>
+                  <Typography variant="h6">Technical Background</Typography>
+                </div>
 
-          {/* Technical Background */}
-          <Card className="rounded-2xl border border-indigo-400 bg-indigo-50">
-            <CardBody>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white text-sm">
-                  ✓
-                </span>
-                <Typography variant="h6">Technical Background</Typography>
-              </div>
+                <Typography className="text-indigo-600 text-sm mb-4">
+                  Helpful (But Not Required)
+                </Typography>
 
-              <Typography className="text-indigo-600 text-sm mb-4">
-                Helpful (But Not Required)
-              </Typography>
+                <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
+                  <li>Prior coding experience</li>
+                  <li>Understanding how websites or apps work</li>
+                  <li>A university degree or Diploma</li>
+                </ul>
+              </CardBody>
+            </Card>
 
-              <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
-                <li>Prior coding experience</li>
-                <li>Understanding how websites or apps work</li>
-                <li>A university degree or Diploma</li>
-              </ul>
-            </CardBody>
-          </Card>
+            <Card className="rounded-2xl border border-gray-200 bg-white">
+              <CardBody>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 text-sm">
+                    i
+                  </span>
+                  <Typography variant="h6">Equipment</Typography>
+                </div>
 
-          {/* Recommended */}
-          <Card className="rounded-2xl border border-gray-200 bg-white">
-            <CardBody>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 text-sm">
-                  i
-                </span>
-                <Typography variant="h6">Equipment</Typography>
-              </div>
+                <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
+                  <li>A high-end laptop (a basic one works)</li>
+                  <li>Good stable internet (even part-time)</li>
+                  <li>Commit a few hours daily (classes & Practice)</li>
+                </ul>
+              </CardBody>
+            </Card>
+          </div>
 
-              <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
-                <li>A high-end laptop (a basic one works)</li>
-                <li>Good stable internet (even part-time)</li>
-                <li>Commit a few hours daily (classes & Practice)</li>
-              </ul>
-            </CardBody>
-          </Card>
-        </div>
-
-        {/* Callout */}
-        <div className="mt-10 border border-indigo-300 rounded-xl p-6 bg-indigo-50">
-          <Typography className="font-semibold mb-1">
-            Don’t Meet All Prerequisites?
-          </Typography>
-          <Typography className="text-sm text-gray-700">
-            We offer foundational modules and support resources to help you catch up.
-            Contact our admissions team to discuss your background and learning goals.
-          </Typography>
-        </div>
-      </section>
+          <div className="mt-10 border border-indigo-300 rounded-xl p-6 bg-indigo-50">
+            <Typography className="font-semibold mb-1">
+              Don’t Meet All Prerequisites?
+            </Typography>
+            <Typography className="text-sm text-gray-700">
+              We offer foundational modules and support resources to help you catch up.
+              Contact our admissions team to discuss your background and learning goals.
+            </Typography>
+          </div>
+        </section>
 
 
 {/* ================= PRICING ================= */}
