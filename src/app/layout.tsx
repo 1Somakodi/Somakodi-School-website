@@ -2,8 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout, FixedPlugin } from "@/components";
-import Script from "next/script";
+import { Suspense } from "react";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Script from "next/script";   // 🔹 IMPORTANT IMPORT
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -31,11 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics 4 */}
+        {/* Google Analytics 4 base script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0R04CN5RGD"
           strategy="afterInteractive"
         />
+
         <Script id="ga4-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -45,19 +47,21 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Nepcha Analytics (optional) */}
-        <script
+        {/* Nepcha Analytics (safe Next.js version) */}
+        <Script
           defer
           data-site="YOUR_DOMAIN_HERE"
           src="https://api.nepcha.com/js/nepcha-analytics.js"
-        ></script>
+        />
 
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
 
       <body className={roboto.className}>
-        {/* GA pageview tracking for Next.js routing */}
-        <GoogleAnalytics />
+        {/* GA pageview tracking for Next.js routing — CORRECTLY WRAPPED */}
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
 
         <Layout>
           {children}

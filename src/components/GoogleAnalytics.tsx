@@ -8,10 +8,11 @@ export default function GoogleAnalytics() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (!window.gtag) return;
 
     const url =
-      pathname + (searchParams.toString() ? `?${searchParams}` : "");
+      pathname + (searchParams.toString() ? `?${searchParams.toString()}` : "");
 
     window.gtag("config", "G-0R04CN5RGD", {
       page_path: url,
