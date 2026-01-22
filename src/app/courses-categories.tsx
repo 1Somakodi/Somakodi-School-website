@@ -23,13 +23,13 @@ const CATEGORIES = [
     img: "/image/blogs/BScSE.jpg",
     icon: HeartIcon,
     title: "Frontend Web Development",
-    desc: "3 Courses",
+    desc: "4 Courses",
   },
   {
     img: "/image/blogs/blog-12.jpeg",
     icon: PuzzlePieceIcon,
     title: "Backend Web Development",
-    desc: "1 Courses",
+    desc: "2 Courses",
   },
   {
     img: "/image/blogs/blog12.jpg",
