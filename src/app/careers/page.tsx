@@ -17,7 +17,7 @@ export default function CareersPage() {
   const vacancies = [
     {
       title: "Tutor – Software Engineering",
-      deadline: "January 20, 2026",
+      deadline: "January 30, 2026",
       pdf: "/job-descriptions/Tutor Job Vacancy.pdf",
       category: "Technical",
       description:
@@ -25,7 +25,7 @@ export default function CareersPage() {
     },
     {
       title: "Grants & Partnerships Lead",
-      deadline: "January 15, 2026",
+      deadline: "February 15, 2026",
       pdf: "/job-descriptions/Grants Job Vacancy.pdf",
       category: "Non-Technical",
       description:
